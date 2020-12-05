@@ -55,7 +55,8 @@ version = "0.2.3"
 panic-semihosting = "0.5.3"
 cortex-m-semihosting = "0.3.3"
 arrayvec = { version = "0.5.1", default-features = false }
-panic-halt = "0.2.0"
+#panic-halt = "0.2.0"
+#panic-itm = "0.4.1"
 ssd1306 = "0.4"
 embedded-graphics = "0.6.2"
 usb-device = "0.2.5"
@@ -89,6 +90,9 @@ usb_fs = ["synopsys-usb-otg", "synopsys-usb-otg/fs"]
 usb_hs = ["synopsys-usb-otg", "synopsys-usb-otg/hs"]
 
 sdio = ["sdio-host"]
+
+clocks_example_ext_osc8 = []
+clocks_example_ext_osc25 = []
 
 [profile.dev]
 debug = true
@@ -138,3 +142,8 @@ required-features = ["rt", "stm32f407"]
 [[example]]
 name = "qei"
 required-features = ["rt", "stm32f411"]
+
+[[example]]
+name = "clocksetup-with-itm-debug"
+#required-features = ["rt", "stm32f446"]
+required-features = ["rt"]
